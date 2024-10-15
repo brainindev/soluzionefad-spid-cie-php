@@ -79,7 +79,9 @@ class Setup {
         $config = file_exists("spid-php-setup.json") ?
                 json_decode(file_get_contents("spid-php-setup.json"), true) : array();
 
-        $config['production'] = false;
+        if (! isset($config['production'])) {
+            $config['production'] = false;
+        }
 
         if (!isset($config['acsCustomLocation'])) {
             $config['acsCustomLocation'] = $_acsCustomLocation;
@@ -987,7 +989,7 @@ class Setup {
             self::saveProxyConfigurations($config);
         }
 
-        file_put_contents("spid-php-setup.json", json_encode($config));
+        file_put_contents("spid-php-setup.json", json_encode($config, JSON_PRETTY_PRINT));
 
         // set link to simplesamlphp
         echo $colors->getColoredString("\nCreate symlink for simplesamlphp service... ", "white");
@@ -1765,7 +1767,7 @@ class Setup {
             $proxy_config['tokenExpTime'] = 1200; //20 minutes as default
         }
         
-        file_put_contents("spid-php-proxy.json", json_encode($proxy_config));
+        file_put_contents("spid-php-proxy.json", json_encode($proxy_config, JSON_PRETTY_PRINT));
 
     }
 
