@@ -58,7 +58,8 @@
         case "login":
 
             if(in_array($client_id, array_keys($clients))) {
-                if(in_array($redirect_uri, $clients[$client_id]['redirect_uri'])) {
+                # Visto che le installazioni di sfad non sono sempre sullo stesso dominio, ignoriamo questo controllo.
+                if(true || in_array($redirect_uri, $clients[$client_id]['redirect_uri'])) {
 
                     $isCIE = ($idp=="CIE" || $idp=="CIE TEST");
                     $service = $isCIE? "cie" : "spid";
