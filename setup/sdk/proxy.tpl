@@ -157,7 +157,9 @@
 
         case "logout":
             $return = $redirect_uri? $redirect_uri : $clients[$client_id]['redirect_uri'][0];
-            $return .= (strpos($return, '?') !== false)? '&state='.$state : '?state='.$state;
+            if (! empty($state)) {
+                $return .= (strpos($return, '?') !== false)? '&state='.$state : '?state='.$state;
+            }
 
             $service = "spid";
             if($idp=="CIE" || $idp=="CIE TEST") $service = "cie";
