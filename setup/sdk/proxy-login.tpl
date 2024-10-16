@@ -50,14 +50,14 @@
         <div class="col-md-6 mb-3">
             <div class="h-100 p-5 bg-body-tertiary border rounded-3">
                 <h2>Accedi con SPID</h2>
-                <p>Il Sistema Pubblico di Identità Digitale (SPID) è il sistema di accesso che consente di utilizzare, con un'identità digitale unica, i servizi online della Pubblica Amministrazione e dei privati accreditati.</p>
+                <p class="mt-3 mb-4">Il Sistema Pubblico di Identità Digitale (SPID) è il sistema di accesso che consente di utilizzare, con un'identità digitale unica, i servizi online della Pubblica Amministrazione e dei privati accreditati.</p>
                 <?php $spidsdk->insertSPIDButton("L"); ?>
             </div>
         </div>
         <div class="col-md-6 mb-3">
             <div class="h-100 p-5 bg-body-tertiary border rounded-3">
                 <h2>Accedi con CIE</h2>
-                <p>La Carta di Identità Elettronica (CIE) è il documento personale che attesta l'identità del cittadino, permette l'accesso ai servizi digitali della Pubblica Amministrazione e dei privati accreditati.</p>
+                <p class="mt-3 mb-4">La Carta di Identità Elettronica (CIE) è il documento personale che attesta l'identità del cittadino, permette l'accesso ai servizi digitali della Pubblica Amministrazione e dei privati accreditati.</p>
                 <?php $spidsdk->insertCIEButton(); ?>
             </div>
         </div>
